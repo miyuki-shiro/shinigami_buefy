@@ -64,25 +64,6 @@
                 </div>
             </div>
         </section>
-
-        <!--<section v-if="appointments">
-            <table class="table">
-                <thead>
-                    <tr><th>ID</th><th>Date</th><th>Start</th><th>End</th><th>Email</th></tr>
-                </thead>
-                <tbody>
-                    <template v-for="apm in appointments">
-                        <tr v-bind:key="apm.id">
-                            <td>{{ apm.id }}</td>
-                            <td>{{ apm.date }}</td>
-                            <td>{{ apm.start }}</td>
-                            <td>{{ apm.end }}</td>
-                            <td>{{ apm.email }}</td>
-                        </tr>
-                    </template>
-                </tbody>
-            </table>
-        </section>-->           
     </div>
 </template>
 
@@ -95,7 +76,6 @@ import { API_BASE_URL } from '../config'
 export default {
     data() {
         return {
-            //appointments: {},
             loading: false,
             date: new Date(),
             day: '', hour: '', email: '', 
@@ -108,14 +88,6 @@ export default {
             ]
         }
     },
-    /*async created() {
-        try {
-            const response = await axios.get(API_BASE_URL + '/appointments')
-            this.appointments = response.data.data
-        } catch (e) {
-            // handle the authentication error here
-        }
-    },*/
     methods: { 
         setDate: function() { 
             //this.day = `${this.date.getFullYear()}-${this.date.getMonth()+1}-${this.date.getDate()}`
@@ -125,13 +97,6 @@ export default {
         },
         showHours: function() {
             this.avhours = this.hours
-            /*this.appointments.forEach(element => {
-                if (element.date.toString() == this.day) {
-                    this.avhours = this.hours.filter(h => h.value != element.start.toString());
-                } else {
-                    this.avhours = this.hours
-                }
-            });*/
         },
         setHour: function(d) {
             this.hour = d
